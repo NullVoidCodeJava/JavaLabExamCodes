@@ -1,0 +1,26 @@
+create database javalabexam; 
+
+CREATE TABLE user (
+  userid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE account (
+  accNumber INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  balance DECIMAL(10, 2) NOT NULL,
+  userid INT NOT NULL,
+  FOREIGN KEY (userid) REFERENCES user(userid)
+);
+
+insert into user (email, password) values ("vedantchimote@gmail.com", "vedantc");
+
+insert into account (name, email, phone, balance, userid) values ("savings", "vedantchimote@gmail.com", 8208380132, 5000, 1);
+
+
+
+
+  
